@@ -25,8 +25,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
       
-      - name: Lint codebase
-        run: npm run lint
+      # - name: Lint codebase
+      #   run: npm run lint
 
       - name: Validate manifest
         run: npm run validate

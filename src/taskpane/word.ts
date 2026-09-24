@@ -21,7 +21,7 @@ export async function runWord() {
 
     // insert a paragraph at the end of the document.
     const paragraph = context.document.body.insertParagraph("Hello World", Word.InsertLocation.end);
-    const table1 = context.document.body.insertTable(5,3,Word.InsertLocation.start);
+    context.document.body.insertTable(5,3,Word.InsertLocation.start);
 
     // change the paragraph color to blue.
     paragraph.font.color = "blue";
