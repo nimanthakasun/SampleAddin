@@ -45,7 +45,7 @@ jobs:
         
   Deploy-on-Server:
     needs: Artifact-Build
-    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/staging'
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     environment: production
     concurrency:
@@ -80,4 +80,4 @@ jobs:
             --chmod=D755,F644 \
             --exclude='.well-known/' \
             -e "ssh -o StrictHostKeyChecking=yes -o BatchMode=yes" \
-            dist/ "${DEPLOY_USER}@${DEPLOY_HOST}"
+            dist/ "${DEPLOY_USER}@${DEPLOY_HOST}:"
